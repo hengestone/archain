@@ -81,6 +81,7 @@ main("") ->
 		]
 	),
 	erlang:halt();
+
 main(Args) -> main(Args, #opts{}).
 main([], O) -> start(O);
 main(["init"|Rest], O) ->
@@ -100,7 +101,7 @@ main(["clean"|Rest], O) ->
 main(["no_auto_join"|Rest], O) ->
 	main(Rest, O#opts { auto_join = false });
 main(["mining_addr", Addr|Rest], O) ->
-	main(Rest, O#opts { mining_addr = ar_util:decode(Addr) });	
+	main(Rest, O#opts { mining_addr = ar_util:decode(Addr) });
 main([Arg|_Rest], _O) ->
 	io:format("Unknown argument: ~s. Terminating.", [Arg]).
 
@@ -117,7 +118,7 @@ start(
 		clean = Clean,
 		auto_join = AutoJoin,
 		diff = Diff,
-		mining_addr = Addr 
+		mining_addr = Addr
 	}) ->
 	% Optionally clear the block cache
 	if Clean -> ar_storage:clear(); true -> do_nothing end,
