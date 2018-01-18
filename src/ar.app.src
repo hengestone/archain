@@ -1,0 +1,9 @@
+{application, ar,
+  [{description, "ArChain"},
+   {vsn, "0.1"},
+   {registered, []},
+   {applications, [kernel, stdlib, elli, yaws]},
+   {mod, { ar, []}},
+   {env, []}
+  ]
+}.

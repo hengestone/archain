@@ -1,0 +1,14 @@
+_build
+deps/**
+ebin/**
+*.beam
+.eunit
+*~
+#*
+.dialyzer.plt
+.rebar
+blocks/*
+logs/*
+.tool-versions
+rebar.lock
+data/*
